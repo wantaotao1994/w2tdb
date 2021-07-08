@@ -35,7 +35,6 @@ program
     .action((alias1, alias2,tables) => {
 
             let query =  require("./lib/query")
-            console.warn(getConfigPath("compareDb.config"))
             let config = require(getConfigPath("compareDb.config")) 
 
             query.do(config.modules.dbAlias[alias1],config.modules.dbAlias[alias2],tables.tables)

@@ -1,6 +1,6 @@
 {
   "name": "w2tdb",
-  "version": "1.0.1",
+  "version": "0.0.1",
   "description": "compare two database or tables",
   "main": "index.js",
   "scripts": {
