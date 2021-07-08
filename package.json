@@ -1,0 +1,26 @@
+{
+  "name": "w2tdb",
+  "version": "1.0.1",
+  "description": "compare two database or tables",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "compare",
+    "database"
+  ],
+  "bin": {
+    "w2tdb":"./index.js"
+  },
+  "author": "winter",
+  "license": "MIT",
+  "dependencies": {
+    "art-template": "^4.13.2",
+    "chalk": "^4.1.1",
+    "commander": "^8.0.0",
+    "is": "^3.3.0",
+    "mysql": "^2.18.1",
+    "path": "^0.12.7"
+  }
+}

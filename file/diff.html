@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Compare Report</title>
+	<style type="text/css">
+	body {background-color:rgb(247, 186, 237);}
+table {margin: 0; border: 1px solid #a0a0a0; box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);}
+td,th {word-break: break-all; font-size: 12pt;padding: 0 3px;}
+tr { vertical-align: top; }
+.title {color: white; background-color: blue; vertical-align: top; padding: 4px 4px; background: linear-gradient(rgb(255, 109, 182), rgb(202, 60, 131));}
+</style>
+</head>
+<body>
+	{{each inList2ButDiff}}
+	  {{if $value.columns.length>0}}
+		<table cellspacing="0" cellpadding="0" style="width:80%;margin:10px auto;">
+		<thead>
+		<tr>
+		<th colspan="2" class="title" style="width:50.000000%;margin: 20px;">{{$value.tableName}} </th>
+		<th colspan="2" class="title" style="width:50.000000%;margin: 20px;"> diff </th>
+		</tr>
+		</thead>
+		<tbody>
+
+				{{each $value.columns}}
+					<tr>
+						<td class="ln">{{$index}}</td><td class="sf3b2"><code>
+					
+							<span {{if $value.base.columnName != $value.current.columnName}} style="color:red"{{/if}}>{{$value.base.columnName}}</span>
+							<span {{if $value.base.dataType != $value.current.dataType}} style="color:red"{{/if}}> {{$value.base.dataType}} </span>
+							<span {{if $value.base.charactorMaximum != $value.current.charactorMaximum}} style="color:red"{{/if}}>{{$value.base.charactorMaximum}}</span>
+						</code></td>
+						<td class="ln">{{$index}}</td><td class="sf3b2">
+							<code>
+								<span >{{$value.current.columnName}}</span>
+								<span > {{$value.current.dataType}} </span>
+								<span>{{$value.current.charactorMaximum}}</span>
+							</code>
+						</td>
+					</tr>
+				{{/each}}
+		</tbody>
+		</table>
+		{{else if $value.columns.length==0}}
+			<table cellspacing="0" cellpadding="0" style="width:80%;margin:10px auto;background-color: green;">
+				<thead>
+				<tr>
+					<th colspan="2" class="title" style="width:50.000000%;margin: 20px;background: green !important;">{{$value.tableName}} </th>
+					<th colspan="2" class="title" style="width:50.000000%;margin: 20px;background: green !important;"> ok </th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+				</table>
+		{{/if}}
+		
+{{/each}}
+
+</body>
+</html>
