@@ -37,4 +37,5 @@ Edit Config file :
 
 #TODO:
 
-1.Add table index  compare
+1.Add table index  compare  √
+2.Add generate sql string
