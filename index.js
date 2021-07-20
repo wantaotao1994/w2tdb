@@ -73,9 +73,9 @@ program
 
     fs.writeFile(url+'/compareDb.config.js',data, function (error) {
         if (error) {
-          console.log('写入失败')
+          logger.error('写入失败')
         } else {
-          console.log('ok!!')
+          logger.success('写入失败')
         }
       })
 

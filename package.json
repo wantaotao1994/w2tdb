@@ -1,6 +1,6 @@
 {
   "name": "w2tdb",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "compare two database or tables",
   "main": "index.js",
   "scripts": {
@@ -15,6 +15,10 @@
   },
   "author": "winter",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wantaotao1994/w2tdb"
+  },
   "dependencies": {
     "art-template": "^4.13.2",
     "chalk": "^4.1.1",

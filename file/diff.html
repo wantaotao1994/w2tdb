@@ -5,14 +5,16 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Compare Report</title>
 	<style type="text/css">
-	body {background-color:rgb(247, 186, 237);}
-table {margin: 0; border: 1px solid #a0a0a0; box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);}
-td,th {word-break: break-all; font-size: 12pt;padding: 0 3px;}
-tr { vertical-align: top; }
-.title {color: white; background-color: blue; vertical-align: top; padding: 4px 4px; background: linear-gradient(rgb(255, 109, 182), rgb(202, 60, 131));}
+	body {background-color:rgb(255, 255, 255);font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
+	table {margin: 0; border: 1px solid #a0a0a0; box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);}
+	td,th {word-break: break-all; font-size: 12pt;padding: 0 3px;}
+	tr { vertical-align: top; }
+	.title {color: white; background-color:rgb(190, 7, 135); vertical-align: top; padding: 4px 4px;}
+	nav{background-color: white;height:50px;font-size: large;font-weight: bold;line-height: 2;width:80%;margin:10px auto;}
 </style>
 </head>
 <body>
+	<nav>w2tDb compare report    | <span style="font-size: xx-small;font-weight: normal;"><a href="https://github.com/wantaotao1994">@Wan</a></span></nav>
 	{{each inList2ButDiff}}
 	  {{if $value.columns.length>0}}
 		<table cellspacing="0" cellpadding="0" style="width:80%;margin:10px auto;">
@@ -31,12 +33,18 @@ tr { vertical-align: top; }
 							<span {{if $value.base.columnName != $value.current.columnName}} style="color:red"{{/if}}>{{$value.base.columnName}}</span>
 							<span {{if $value.base.dataType != $value.current.dataType}} style="color:red"{{/if}}> {{$value.base.dataType}} </span>
 							<span {{if $value.base.charactorMaximum != $value.current.charactorMaximum}} style="color:red"{{/if}}>{{$value.base.charactorMaximum}}</span>
+							<span {{if $value.base.indexKeyType != $value.current.indexKeyType}} style="color:red"{{/if}}>{{$value.base.indexKeyType}}</span>
+							<span {{if $value.base.indexKeyUnique != $value.current.indexKeyUnique}} style="color:red"{{/if}}>{{$value.base.indexKeyUnique}}</span>
+
+
 						</code></td>
 						<td class="ln">{{$index}}</td><td class="sf3b2">
 							<code>
 								<span >{{$value.current.columnName}}</span>
 								<span > {{$value.current.dataType}} </span>
 								<span>{{$value.current.charactorMaximum}}</span>
+								<span>{{$value.current.indexKeyType}}</span>
+								<span>{{$value.current.indexKeyUnique}}</span>
 							</code>
 						</td>
 					</tr>

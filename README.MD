@@ -33,3 +33,8 @@ Edit Config file :
     }
 ```
 >w2tdb do test1 test2  or w2tdb do test1 test2 -t [tables...]
+
+
+#TODO:
+
+1.Add table index  compare
